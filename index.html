@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lax-á — Frá upptökum til sjávar</title>
+<meta name="description" content="Lax-á, að eigin sögn stærsta laxveiðiþjónusta Íslands, sögð sem ein á frá upptökum til sjávar. Ellefu ár, þrír heimar og alþjóðleg dagskrá á Grænlandi og í Skotlandi.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#EDE9E1">
+<link rel="preload" href="fonts/Boska-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Switzer-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=98a7549">
+<script>
+  /* Smooth-scroll gate, evaluated once, before paint — mirrors the Sobha source flag.
+     Desktop pointer-fine only. Never on touch. Never with reduced motion. */
+  (function(){
+    /* The in-app preview pane loads with innerWidth 0, so a decision taken
+       before paint always lands on native and the whole smooth engine
+       (Lenis, wells, parallax) silently disappears. Defer the decision
+       until the viewport reports a real width (cap 1.5s), and gate on the
+       pointer, not just width. */
+    function decide(){
+      var fine = matchMedia('(hover:hover) and (pointer:fine)').matches && navigator.maxTouchPoints === 0;
+      var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var smooth = fine && window.innerWidth >= 720 && !reduced;
+      document.documentElement.classList.add(smooth ? 'is-smooth' : 'is-native');
+      window.dispatchEvent(new Event('laxa:mode'));
+    }
+    if (window.innerWidth > 0) { decide(); }
+    else {
+      var t0 = Date.now();
+      (function poll(){
+        if (window.innerWidth > 0 || Date.now() - t0 > 1500) decide();
+        else setTimeout(poll, 120);
+      })();
+    }
+  })();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+</head>
+<body>
+
+<a class="visually-hidden" href="#main">Fara í meginefni</a>
+
+<!-- ============================= NAV ============================= -->
+<header class="nav" id="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">LAX-Á<small>Angling Club</small></a>
+    <nav class="nav-links" aria-label="Aðalvalmynd">
+      <a href="#arnar">Árnar</a>
+      <a href="#heimar">Heimar</a>
+      <a href="#alfjod">Alþjóð</a>
+      <a href="#vaktastada">Laus holl</a>
+      <a href="#samband">Samband</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-ghost" href="#samband">Fyrirspurn</a>
+      <button class="burger" id="burger" aria-label="Opna valmynd" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#arnar">Árnar</a></li>
+    <li><a href="#heimar">Heimar</a></li>
+    <li><a href="#alfjod">Alþjóð</a></li>
+    <li><a href="#vaktastada">Laus holl</a></li>
+    <li><a href="#samband">Samband</a></li>
+  </ul>
+  <a class="btn btn-primary" href="#samband">Senda fyrirspurn</a>
+</div>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <div class="hero-outer" id="top">
+    <section class="hero">
+      <div class="hero-media">
+        <img src="assets/images/langa-hero-aerial.jpg" alt="Loftmynd af Langá og veiðihúsi í kvöldsól, hraunbakkar og víðátta á Vesturlandi" width="1800" height="1349">
+      </div>
+      <div class="hero-scrim"></div>
+      <div class="hero-inner">
+        <h1>Fylgdu ánni frá upptökum til sjávar.</h1>
+        <p class="hero-sub">Lax-á kallar sig stærstu laxveiðiþjónustu Íslands, með aðgang að yfir 40 ám og veiðistöðum. Veitt er í hollum: ákveðinn fjöldi stanga, ákveðna daga, á ákveðinni á. Hér sýnum við stöðuna.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#arnar">Skoða árnar</a>
+          <a class="btn btn-ghost" href="#samband">Fyrirspurn</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================= VAKTIN (concept) ============================= -->
+  <section class="chapter vaktin" id="hvad-er-vaktin">
+    <div class="container chapter-pad">
+      <p class="eyebrow rv-text">Kerfið á bak við árnar</p>
+      <h2 class="vaktin-word rv-circle">Hollið</h2>
+      <div class="vaktin-copy body-l rv-text">
+        <p>Á íslenskum laxveiðiám er fjöldi stanga takmarkaður og stuttu sumri skipt í holl. Hvert holl er ákveðinn fjöldi stanga, ákveðna daga, á ákveðinni á. Deginum sjálfum er svo skipt í morgunvakt og kvöldvakt.</p>
+        <p>Það er varan. Lax-á selur hana í síma og með tölvupósti í dag. Þessi síða sýnir hvernig hún gæti litið út sem stafrænt yfirlit, á í einu, vika fyrir viku.</p>
+      </div>
+      <blockquote class="vaktin-quote rv-text">
+        „Iceland's largest sporting outfitter by far, with over 40 salmon rivers/beats exclusively leased."
+        <cite>Lax-á, um sjálfa sig, lax-a.net</cite>
+      </blockquote>
+      <div class="triptych">
+        <figure class="side"><img class="rv-img parallax" src="assets/images/thvera-support.jpg" alt="Pallur og heitur pottur við veiðihús Lax-á" loading="lazy"></figure>
+        <figure class="center"><img class="rv-img parallax" src="assets/images/about-heritage.jpg" alt="Tveir veiðimenn með lax um borð í bát" loading="lazy"></figure>
+        <figure class="side"><img class="rv-img parallax" src="assets/images/tungufljot-support.jpg" alt="Lax sleppt aftur út í Tungufljót" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= RIVERS CHAPTER ============================= -->
+  <section class="chapter rivers" id="arnar">
+    <div class="rivers-track" id="rivers-track">
+      <div class="rivers-sticky">
+        <div class="rivers-head">
+          <div>
+            <p class="eyebrow rv-text">Ellefu ár, einn farvegur</p>
+            <h2 class="rv-title">Árnar, í röð niður eftir landinu</h2>
+          </div>
+          <span class="rivers-note">Sýnishorn af hollastöðu, ekki rauntíma bókun</span>
+        </div>
+
+        <div class="river-progress-mobile">
+          <span class="river-progress-label" id="river-progress-label">01 / 11</span>
+          <div class="river-progress-track"><div class="river-progress-fill" id="river-progress-fill"></div></div>
+        </div>
+
+        <div class="rivers-grid">
+          <div class="river-rail">
+            <svg class="river-svg" viewBox="0 0 240 1100" preserveAspectRatio="none" aria-hidden="true">
+              <path id="river-static" d="M 134.37,-20.00 C 135.32,-8.33 132.15,21.67 140.10,50.00 C 148.05,78.33 175.11,116.67 182.07,150.00 C 189.03,183.33 188.92,216.67 181.83,250.00 C 174.74,283.33 155.86,316.67 139.55,350.00 C 123.24,383.33 98.41,416.67 83.97,450.00 C 69.53,483.33 55.64,516.67 52.89,550.00 C 50.14,583.33 56.64,616.67 67.45,650.00 C 78.26,683.33 100.72,716.67 117.74,750.00 C 134.76,783.33 157.91,816.67 169.57,850.00 C 181.23,883.33 189.32,916.67 187.69,950.00 C 186.06,983.33 173.58,1021.67 159.77,1050.00 C 145.96,1078.33 113.97,1108.33 104.81,1120.00"/>
+              <path id="river-flown" d="M 134.37,-20.00 C 135.32,-8.33 132.15,21.67 140.10,50.00 C 148.05,78.33 175.11,116.67 182.07,150.00 C 189.03,183.33 188.92,216.67 181.83,250.00 C 174.74,283.33 155.86,316.67 139.55,350.00 C 123.24,383.33 98.41,416.67 83.97,450.00 C 69.53,483.33 55.64,516.67 52.89,550.00 C 50.14,583.33 56.64,616.67 67.45,650.00 C 78.26,683.33 100.72,716.67 117.74,750.00 C 134.76,783.33 157.91,816.67 169.57,850.00 C 181.23,883.33 189.32,916.67 187.69,950.00 C 186.06,983.33 173.58,1021.67 159.77,1050.00 C 145.96,1078.33 113.97,1108.33 104.81,1120.00"/>
+            </svg>
+            <div class="river-indicator" id="river-indicator" aria-hidden="true"></div>
+            <div class="river-nodes" id="river-nodes" aria-label="Velja á">
+              <button class="river-node" data-index="0" style="left:58.4%;top:4.55%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">01 Þverá</span></button>
+              <button class="river-node" data-index="1" style="left:75.9%;top:13.64%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">02 Norðurá</span></button>
+              <button class="river-node" data-index="2" style="left:75.8%;top:22.73%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">03 Langá</span></button>
+              <button class="river-node" data-index="3" style="left:58.1%;top:31.82%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">04 Blanda</span></button>
+              <button class="river-node" data-index="4" style="left:35.0%;top:40.91%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">05 Kjarrá</span></button>
+              <button class="river-node" data-index="5" style="left:22.0%;top:50.00%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">06 Breiðdalsá</span></button>
+              <button class="river-node" data-index="6" style="left:28.1%;top:59.09%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">07 Stóra Laxá, efri</span></button>
+              <button class="river-node" data-index="7" style="left:49.1%;top:68.18%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">08 Stóra Laxá, neðri</span></button>
+              <button class="river-node" data-index="8" style="left:70.7%;top:77.27%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">09 Tungufljót</span></button>
+              <button class="river-node" data-index="9" style="left:78.2%;top:86.36%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">10 Sog-Ásgarður</span></button>
+              <button class="river-node" data-index="10" style="left:66.6%;top:95.45%"><span class="node-dot"><span class="node-pulse"></span><span class="node-pulse p2"></span><span class="node-pulse p3"></span></span><span class="node-label">11 East Rangá</span></button>
+            </div>
+          </div>
+
+          <div class="beat-panels" id="beat-panels">
+
+            <article class="beat-panel is-active" data-index="0">
+              <div class="beat-copy-col">
+                <span class="beat-index">01 / 11</span>
+                <h3 class="beat-name">Þverá</h3>
+                <p class="beat-desc body">Veiðihús og fjölskylduslóðir við ána, Vesturlandi.</p>
+                <span class="beat-chip is-open">Laust holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/thvera-hero.jpg" alt="Fjölskylda með lax og hunda á bakka Þverár" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="1">
+              <div class="beat-copy-col">
+                <span class="beat-index">02 / 11</span>
+                <h3 class="beat-name">Norðurá</h3>
+                <p class="beat-desc body">Vatnsmikil og gróin dalá, ein þekktasta á landsins.</p>
+                <span class="beat-chip is-sold">Fullbókað holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/nordura-hero.jpg" alt="Fjallavatn og á í Norðurárdal" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="2">
+              <div class="beat-copy-col">
+                <span class="beat-index">03 / 11</span>
+                <h3 class="beat-name">Langá</h3>
+                <p class="beat-desc body">Hraunbakkar og víðátta á Vesturlandi.</p>
+                <span class="beat-chip is-open">Laust holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/langa-support.jpg" alt="Votlendi og á séð úr lofti við Langá" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="3">
+              <div class="beat-copy-col">
+                <span class="beat-index">04 / 11</span>
+                <h3 class="beat-name">Blanda</h3>
+                <p class="beat-desc body">Jökulá með veiðihúsi á árbakkanum, norðanlands.</p>
+                <span class="beat-chip is-request">Á fyrirspurn</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/blanda-support.jpg" alt="Veiðihús Lax-á við Blöndu, loftmynd" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="4">
+              <div class="beat-copy-col">
+                <span class="beat-index">05 / 11</span>
+                <h3 class="beat-name">Kjarrá</h3>
+                <p class="beat-desc body">Klettar og straumvatn í Borgarfirði.</p>
+                <span class="beat-chip is-open">Laust holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/kjarra-hero.jpg" alt="Veiðimaður kastar í Kjarrá undir björgum" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="5">
+              <div class="beat-copy-col">
+                <span class="beat-index">06 / 11</span>
+                <h3 class="beat-name">Breiðdalsá</h3>
+                <p class="beat-desc body">Fossar og þröng gljúfur, Austurlandi.</p>
+                <span class="beat-chip is-sold">Fullbókað holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/breiddalsa-hero.jpg" alt="Fossar og gljúfur í Breiðdalsá" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="6">
+              <div class="beat-copy-col">
+                <span class="beat-index">07 / 11</span>
+                <h3 class="beat-name">Stóra Laxá, efri</h3>
+                <p class="beat-desc body">Efri hluti árinnar, rólegri veiðistaðir.</p>
+                <span class="beat-chip is-open">Laust holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/stora-laxa-upper-hero.jpg" alt="Veiðimaður sleppir laxi í efri hluta Stóru Laxár" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="7">
+              <div class="beat-copy-col">
+                <span class="beat-index">08 / 11</span>
+                <h3 class="beat-name">Stóra Laxá, neðri</h3>
+                <p class="beat-desc body">Neðri hluti árinnar, nær ósum.</p>
+                <span class="beat-chip is-request">Á fyrirspurn</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/stora-laxa-lower-hero.jpg" alt="Ungur veiðimaður með lax úr neðri hluta Stóru Laxár" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="8">
+              <div class="beat-copy-col">
+                <span class="beat-index">09 / 11</span>
+                <h3 class="beat-name">Tungufljót</h3>
+                <p class="beat-desc body">Djúpir hyljir í Biskupstungum.</p>
+                <span class="beat-chip is-open">Laust holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/tungufljot-hero.jpg" alt="Veiðimaður vaðandi í Tungufljóti milli gljúfurveggja" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="9">
+              <div class="beat-copy-col">
+                <span class="beat-index">10 / 11</span>
+                <h3 class="beat-name">Sog-Ásgarður</h3>
+                <p class="beat-desc body">Vatnsmesta á landsins, upprunnin úr Þingvallavatni.</p>
+                <span class="beat-chip is-sold">Fullbókað holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/sog-asgardur-hero.jpg" alt="Veiðimaður og stökkvandi lax í Soginu" loading="lazy"></div>
+            </article>
+
+            <article class="beat-panel" data-index="10">
+              <div class="beat-copy-col">
+                <span class="beat-index">11 / 11</span>
+                <h3 class="beat-name">East Rangá</h3>
+                <p class="beat-desc body">Aðgengileg veiðisvæði sunnanlands.</p>
+                <span class="beat-chip is-open">Laust holl</span>
+              </div>
+              <div class="beat-media"><img class="rv-img" src="assets/images/east-ranga-hero.jpg" alt="Veiðimaður með lax og hund við East Rangá" loading="lazy"></div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= THREE WORLDS ============================= -->
+  <section class="chapter worlds" id="heimar">
+    <div class="worlds-track" id="worlds-track">
+      <div class="worlds-sticky">
+
+        <div class="world-panel is-active" data-world="0">
+          <div class="world-media"><img class="rv-img" src="assets/images/nordura-support.jpg" alt="Veiðikona með lax og hund á bökkum Norðurár" loading="lazy"></div>
+          <div class="world-scrim"></div>
+          <div class="world-content">
+            <span class="world-counter">01 — 03</span>
+            <h3 class="world-name rv-title">Lax</h3>
+            <p class="world-species rv-text">Atlantshafslax, í ám frá Vesturlandi til Suðurlands.</p>
+          </div>
+        </div>
+
+        <div class="world-panel" data-world="1">
+          <div class="world-media"><img class="rv-img" src="assets/images/sog-asgardur-support.jpg" alt="Útsýnispallur við kyrrlátt vatnasvæði" loading="lazy"></div>
+          <div class="world-scrim"></div>
+          <div class="world-content">
+            <span class="world-counter">02 — 03</span>
+            <h3 class="world-name rv-title">Silungur</h3>
+            <p class="world-species rv-text">Sjóbleikja og urriði, meðal annars við Sog-Ásgarð og Tungufljót.</p>
+          </div>
+        </div>
+
+        <div class="world-panel" data-world="2">
+          <div class="world-media"><img class="rv-img" src="assets/images/hunting-hero.jpg" alt="Veiðimaður á hreindýraveiðum stekkur yfir tjörn á hálendinu" loading="lazy"></div>
+          <div class="world-scrim"></div>
+          <div class="world-content">
+            <span class="world-counter">03 — 03</span>
+            <h3 class="world-name rv-title">Veiðar</h3>
+            <p class="world-species rv-text">Hreindýr, rjúpa og gæs, íslenska veiðiarmur Lax-á.</p>
+          </div>
+        </div>
+
+        <div class="worlds-nav" id="worlds-nav">
+          <button class="is-active" data-world="0" aria-label="Lax"></button>
+          <button data-world="1" aria-label="Silungur"></button>
+          <button data-world="2" aria-label="Veiðar"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FLAGSHIP: BLANDA ============================= -->
+  <section class="chapter flagship" id="blanda">
+    <div class="container chapter-pad">
+      <div class="flagship-media parallax-frame">
+        <img class="rv-img parallax" src="assets/images/blanda-hero.jpg" alt="Veiðikona vaðandi og kastar í Blöndu norðanlands" loading="lazy">
+      </div>
+      <div class="flagship-grid">
+        <div>
+          <p class="eyebrow flagship-tag rv-text">Vakt í fókus</p>
+          <h2 class="rv-title">Blanda</h2>
+          <p class="body-l rv-text" style="margin-top:20px;max-width:44ch;">Vatnsmikil jökulá norðanlands, með eigin veiðihúsi á bakkanum. Löng veiðisvæði, breið gljúfur og opið útsýni yfir dalinn frá stofuglugganum.</p>
+          <div class="flagship-figures">
+            <div>
+              <p class="flagship-figure-label">Landshluti</p>
+              <p class="flagship-figure-value">Norðurland</p>
+            </div>
+            <div>
+              <p class="flagship-figure-label">Vaktastaða</p>
+              <p class="flagship-figure-value" style="color:var(--claret);">Sýnishorn</p>
+            </div>
+          </div>
+        </div>
+        <div class="flagship-side-media parallax-frame">
+          <img class="rv-img parallax" src="assets/images/blanda-support.jpg" alt="Veiðihús Lax-á við Blöndu, loftmynd í kvöldsól" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= INTERNATIONAL ============================= -->
+  <section class="chapter intl" id="alfjod">
+    <div class="container" style="padding-top:clamp(72px,11vw,148px);">
+      <div class="chapter-head">
+        <p class="eyebrow rv-text">Utan Íslands</p>
+        <h2 class="rv-title">Alþjóðleg dagskrá</h2>
+      </div>
+    </div>
+    <div class="intl-grid">
+      <div class="intl-panel">
+        <div class="intl-panel-media"><img class="rv-img" src="assets/images/greenland-hero.jpg" alt="Veiðimaður í snjógalla um borð í bát við Grænland" loading="lazy"></div>
+        <div class="intl-panel-scrim"></div>
+        <div class="intl-panel-content">
+          <p class="intl-eyebrow">Grænland</p>
+          <h3 class="rv-title">Bleikja við ísjaka</h3>
+          <p class="rv-text">Veiðiferðir á slóðir sem fæstir Íslendingar sjá, í félagi við heimamenn.</p>
+          <div class="intl-species"><span>Bleikja</span><span>Sauðnaut</span><span>Hreindýr</span></div>
+        </div>
+      </div>
+      <div class="intl-panel">
+        <div class="intl-panel-media"><img class="rv-img" src="assets/images/scotland-dee-hero.jpg" alt="River Dee í Skotlandi við veiðihús" loading="lazy"></div>
+        <div class="intl-panel-scrim"></div>
+        <div class="intl-panel-content">
+          <p class="intl-eyebrow">Skotland</p>
+          <h3 class="rv-title">River Dee</h3>
+          <p class="rv-text">Söguleg skosk laxveiðiá, hluti af sömu hollaskiptingu og árnar heima.</p>
+          <div class="intl-species"><span>Atlantshafslax</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= REGISTER ============================= -->
+  <section class="chapter register" id="vaktastada">
+    <div class="container chapter-pad">
+      <div class="register-head">
+        <div>
+          <p class="eyebrow rv-text">Það sem vantar á núverandi síðu</p>
+          <h2 class="rv-title">Hollayfirlit, viku fyrir viku</h2>
+        </div>
+        <p class="register-note" id="register-note">Sýnishorn af hollaskrá. Sýnir uppbyggingu, ekki rauntíma stöðu, enda birtir lax-a.net enga á í dag.</p>
+      </div>
+
+      <div class="register-legend">
+        <span class="legend-item"><span class="legend-swatch open"></span>Laust holl</span>
+        <span class="legend-item"><span class="legend-swatch sold"></span>Fullbókað holl</span>
+        <span class="legend-item"><span class="legend-swatch request"></span>Á fyrirspurn</span>
+      </div>
+
+      <div class="register-table-wrap">
+        <table class="register-table" aria-describedby="register-note">
+          <thead>
+            <tr>
+              <th scope="col">Á</th>
+              <th scope="col">Vika 24</th>
+              <th scope="col">Vika 25</th>
+              <th scope="col">Vika 26</th>
+              <th scope="col">Vika 27</th>
+              <th scope="col">Vika 28</th>
+              <th scope="col">Vika 29</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Þverá</th>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell request"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell open"></div></td>
+            </tr>
+            <tr>
+              <th scope="row">Kjarrá</th>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell request"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+            </tr>
+            <tr>
+              <th scope="row">Blanda</th>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell request"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell request"></div></td>
+            </tr>
+            <tr>
+              <th scope="row">Sog-Ásgarður</th>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell request"></div></td>
+              <td><div class="reg-cell open"></div></td>
+            </tr>
+            <tr>
+              <th scope="row">Tungufljót</th>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+            </tr>
+            <tr>
+              <th scope="row">East Rangá</th>
+              <td><div class="reg-cell request"></div></td>
+              <td><div class="reg-cell sold"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell open"></div></td>
+              <td><div class="reg-cell request"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PARTNERS ============================= -->
+  <section class="chapter partners" id="vidurkennt">
+    <div class="container chapter-pad" style="padding-top:0;">
+      <div class="partners-head">
+        <p class="eyebrow rv-text">Viðurkennt af</p>
+      </div>
+      <div class="partners-row rv-img">
+        <img src="assets/images/badge-nasf.png" alt="North Atlantic Salmon Fund" loading="lazy">
+        <img src="assets/images/badge-ast.png" alt="Atlantic Salmon Trust" loading="lazy">
+        <img src="assets/images/badge-asf.png" alt="Atlantic Salmon Federation" loading="lazy">
+        <img class="badge-ferdamalastofa" src="assets/images/badge-ferdamalastofa.png" alt="Ferðamálastofa" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ENQUIRY ============================= -->
+  <section class="chapter enquiry" id="samband">
+    <div class="container chapter-pad">
+      <div class="chapter-head">
+        <p class="eyebrow rv-text">Fyrirspurn</p>
+        <h2 class="rv-title">Spurðu um næsta lausa holl</h2>
+      </div>
+      <div class="enquiry-grid">
+        <div>
+          <div class="enquiry-media parallax-frame">
+            <img class="rv-img parallax" src="assets/images/kjarra-support.jpg" alt="Hundur fylgist með veiðimanni í Kjarrá" loading="lazy">
+          </div>
+          <div class="enquiry-contact">
+            <a href="tel:+3545316100">531 6100</a>
+            <a href="mailto:info@lax-a.is">info@lax-a.is</a>
+            <address>Akurhvarfi 16, 203 Kópavogur · lax-a.net</address>
+          </div>
+        </div>
+        <form class="enquiry-form" id="enquiry-form">
+          <div class="field">
+            <label for="f-name">Nafn</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-email">Netfang</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-river">Æskileg á</label>
+            <select id="f-river" name="river">
+              <option>Þverá</option><option>Norðurá</option><option>Langá</option><option>Blanda</option>
+              <option>Kjarrá</option><option>Breiðdalsá</option><option>Stóra Laxá, efri</option>
+              <option>Stóra Laxá, neðri</option><option>Tungufljót</option><option>Sog-Ásgarður</option>
+              <option>East Rangá</option><option>Ekki ákveðið</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-week">Æskileg vika</label>
+            <input id="f-week" name="week" type="text" placeholder="t.d. vika 27">
+          </div>
+          <div class="field full">
+            <label for="f-msg">Skilaboð</label>
+            <textarea id="f-msg" name="message" placeholder="Fjöldi stanga, dagsetningar, annað sem skiptir máli"></textarea>
+          </div>
+          <div class="form-foot">
+            <p class="form-note">Sendir tölvupóst í gegnum þitt eigið póstforrit. Frumgerð, ekki tengd bókunarkerfi.</p>
+            <button class="btn btn-primary" type="submit" id="enquirySubmitCta">Senda fyrirspurn</button>
+          </div>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="footer-media"><img src="assets/images/east-ranga-lodge.jpg" alt="" aria-hidden="true"></div>
+  <div class="footer-scrim"></div>
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand">Lax-á</p>
+        <p class="footer-tag">Ellefu ár, einn farvegur, frá upptökum til sjávar. Endurhönnunartillaga unnin af SNDR.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Síðan</h4>
+        <ul>
+          <li><a href="#arnar">Árnar</a></li>
+          <li><a href="#heimar">Heimar</a></li>
+          <li><a href="#alfjod">Alþjóð</a></li>
+          <li><a href="#vaktastada">Hollayfirlit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Samband</h4>
+        <ul>
+          <li><a href="tel:+3545316100">531 6100</a></li>
+          <li><a href="mailto:info@lax-a.is">info@lax-a.is</a></li>
+          <li><a href="https://lax-a.net" target="_blank" rel="noopener">lax-a.net</a></li>
+          <li>Akurhvarfi 16, 203 Kópavogur</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">Lax-á ehf., kt. 690589-1419</p>
+      <p class="footer-disclaimer">Óformleg endurhönnunartillaga til kynningar. Ekki opinber síða Lax-á. Myndir fengnar af lax-a.net.</p>
+    </div>
+    <!-- JOB 2 fix: sndr-credit lives INSIDE .footer-inner (position:relative;z-index:2)
+         so it sits above .footer-scrim — as a bare sibling of .footer-inner it was a
+         non-positioned element painted UNDER the scrim's absolute z-index:auto layer,
+         washing the credit line out to near-invisibility, and it also ran edge-to-edge
+         outside the .container gutter instead of matching the rest of the footer. -->
+    <p class="sndr-credit">Sjálfstæð frumgerð frá SNDR Studio. Ótengd Lax-á. Efni og myndir eru í eigu Lax-á og notað hér til kynningar. <a href="https://sndr-studio.pages.dev" rel="noopener">Designed by SNDR Studio</a></p>
+  </div>
+</footer>
+
+<!-- mobile: sticky enquiry CTA, retires (JOB 1) once the enquiry form's own
+     submit button (#enquirySubmitCta) is in view -->
+<div class="mobile-cta">
+  <a class="btn btn-primary" href="#samband">Senda fyrirspurn</a>
+</div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="main.js?v=98a7549"></script>
+</body>
+</html>
